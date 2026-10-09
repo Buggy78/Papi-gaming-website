@@ -188,3 +188,40 @@ loadoutBtn.addEventListener("click", function () {
 });
 
 console.log("Gilly Gaming Zone loaded successfully!");
+
+const addUserBtn = document.getElementById("addUserBtn");
+const userPanel = document.getElementById("userPanel");
+const usernameInput = document.getElementById("usernameInput");
+const saveUserBtn = document.getElementById("saveUserBtn");
+const userMessage = document.getElementById("userMessage");
+
+if (addUserBtn && userPanel) {
+    addUserBtn.addEventListener("click", () => {
+        userPanel.hidden = !userPanel.hidden;
+
+        if (!userPanel.hidden) {
+            usernameInput.focus();
+        }
+    });
+}
+
+if (saveUserBtn && usernameInput && userMessage) {
+    saveUserBtn.addEventListener("click", () => {
+        const username = usernameInput.value.trim();
+
+        if (!username) {
+            userMessage.textContent = "Please enter a username.";
+            return;
+        }
+
+        if (username.length > 24) {
+            userMessage.textContent = "Maximum 24 characters.";
+            return;
+        }
+
+        userMessage.textContent = "Welcome, " + username + "! Profile added on this device.";
+        addUserBtn.textContent = "👤 " + username;
+        userPanel.hidden = true;
+    });
+}
+

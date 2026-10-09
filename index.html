@@ -15,16 +15,72 @@
     <p>Your World. Your Game. Your Victory.</p>
 </header>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#games">Games</a>
-    <a href="#codm">CODM Tools</a>
-    <a href="#about">About</a>
-</nav>
 
 <main>
 
 <section class="hero">
+
+<nav class="main-nav">
+    <a href="#home">Home</a>
+    <a href="#games">Games</a>
+    <a href="#codm">CODM Tools</a>
+    <a href="#about">About</a>
+    <a href="#links">Official Links</a>
+    <button class="button" id="addUserBtn" type="button">+ Add User</button>
+</nav>
+
+
+<div id="userPanel" class="tool-card" hidden>
+  <h2>🎮 Gilly Gaming Zone Account</h2>
+
+  <div id="authForms">
+    <label for="usernameInput">Gaming username</label>
+    <input
+      id="usernameInput"
+      type="text"
+      maxlength="24"
+      placeholder="Choose a gaming name"
+      autocomplete="nickname"
+    >
+
+    <label for="emailInput">Email address</label>
+    <input
+      id="emailInput"
+      type="email"
+      placeholder="Enter your email"
+      autocomplete="email"
+      required
+    >
+
+    <label for="passwordInput">Password</label>
+    <input
+      id="passwordInput"
+      type="password"
+      placeholder="At least 6 characters"
+      autocomplete="current-password"
+      minlength="6"
+      required
+    >
+
+    <button class="button" id="signupBtn" type="button">
+      Create Account
+    </button>
+
+    <button class="button" id="loginBtn" type="button">
+      Log In
+    </button>
+  </div>
+
+  <div id="signedInPanel" hidden>
+    <p>Welcome, <strong id="signedInUsername"></strong>!</p>
+    <button class="button" id="logoutBtn" type="button">
+      Log Out
+    </button>
+  </div>
+
+  <p id="userMessage" aria-live="polite"></p>
+</div>
+
     <img
         src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
         alt="Gaming setup"
@@ -183,6 +239,29 @@
     <p>A home for gamers who love competition, technology and improving their skills.</p>
 </section>
 
+<section id="links" class="tool-card">
+    <h2>🎮 Official Gaming Links</h2>
+    <p>Use these links to manage your account and find CODM top-ups.</p>
+
+    <div class="official-links">
+        <a class="button"
+           href="https://profile.activision.com/signup"
+           target="_blank" rel="noopener noreferrer">
+            Create Activision Account
+        </a>
+
+        <a class="button"
+           href="https://shop.carry1st.com/en/KE/products/type/Direct_Game_Top_Up"
+           target="_blank" rel="noopener noreferrer">
+            CODM Kenya Top-Ups
+        </a>
+    </div>
+
+    <p class="note">
+        Check your account details and the seller's current terms before purchasing.
+    </p>
+</section>
+
 </main>
 
 <footer>
@@ -191,5 +270,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script type="module" src="firebase-auth.js"></script>
 </body>
 </html>

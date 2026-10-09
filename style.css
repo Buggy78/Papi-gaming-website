@@ -262,3 +262,159 @@ footer {
         height: 190px;
     }
 }
+
+/* Gilly Gaming Zone upgrades */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+}
+
+.main-nav a {
+    text-decoration: none;
+}
+
+#userPanel {
+    max-width: 600px;
+    margin: 16px auto;
+}
+
+#userPanel input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.official-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.note {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+body {
+    background-image:
+        linear-gradient(rgba(5, 10, 12, 0.88), rgba(5, 10, 12, 0.96)),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Mobile layout fixes */
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.main-nav .button {
+    width: auto;
+    min-width: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hero-content {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.hero h2 {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    overflow-wrap: anywhere;
+}
+
+#userPanel {
+    width: calc(100% - 32px);
+    max-width: 480px;
+    margin: 16px auto;
+    box-sizing: border-box;
+}
+
+#userPanel .button {
+    width: auto;
+}
+
+
+/* Premium black gradient header */
+.site-header {
+    background: linear-gradient(
+        110deg,
+        #030406 0%,
+        #101020 42%,
+        #001f19 72%,
+        #030406 100%
+    );
+    border-bottom: 3px solid #00f5a0;
+    text-align: center;
+    padding: 28px 16px;
+}
+
+.site-header h1 {
+    color: #00f5a0;
+    text-shadow: 0 0 18px rgba(0, 245, 160, 0.45);
+    overflow-wrap: anywhere;
+}
+
+.site-header p {
+    color: #f3f4f6;
+}
+
+.main-nav {
+    background: linear-gradient(90deg, #050608, #171126, #061a18, #050608);
+    border-bottom: 1px solid #00f5a0;
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 20px 12px;
+    }
+
+    .site-header h1 {
+        font-size: 1.65rem;
+    }
+
+    .main-nav {
+        gap: 4px;
+        padding: 10px 6px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
