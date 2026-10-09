@@ -418,3 +418,29 @@ body {
     }
 }
 
+
+/* Fix mobile account form touch interaction */
+#userPanel {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+#authForms,
+#authForms label,
+#authForms input,
+#signedInPanel,
+#signedInPanel button {
+  position: relative;
+  z-index: 21;
+  pointer-events: auto;
+}
+
+#authForms input {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  touch-action: manipulation;
+  user-select: text;
+  -webkit-user-select: text;
+}
