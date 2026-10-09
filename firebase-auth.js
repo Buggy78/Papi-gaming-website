@@ -119,11 +119,11 @@ onAuthStateChanged(auth, user => {
     signedInPanel.hidden = false;
     signedInUsername.textContent = user.displayName || "Gamer";
     usernameInput.value = user.displayName || "";
-    addUserBtn.textContent = "👤 " + (user.displayName || "Account");
+    addUserBtn.textContent = "Account";
   } else {
     forms.hidden = false;
     signedInPanel.hidden = true;
-    addUserBtn.textContent = "+ Add User";
+    addUserBtn.textContent = "Account";
   }
 });
 

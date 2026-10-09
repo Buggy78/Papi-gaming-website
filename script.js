@@ -220,7 +220,7 @@ if (saveUserBtn && usernameInput && userMessage) {
         }
 
         userMessage.textContent = "Welcome, " + username + "! Profile added on this device.";
-        addUserBtn.textContent = "👤 " + username;
+        addUserBtn.textContent = "Account";
         userPanel.hidden = true;
     });
 }
