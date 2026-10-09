@@ -1,1 +1,223 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papi Gaming | Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080b14;
+            color: white;
+        }
+
+        header {
+            background: #101629;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ff99;
+        }
+
+        header h1 {
+            color: #00ff99;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px;
+            background: #151c30;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00ff99;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background: linear-gradient(135deg, #101629, #202047);
+        }
+
+        .hero h2 {
+            font-size: 35px;
+            color: #00ff99;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #c5cbd8;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #00ff99;
+            color: #080b14;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 35px 20px;
+        }
+
+        section h2 {
+            color: #00ff99;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #151c30;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #29344c;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff99;
+        }
+
+        .card h3 {
+            color: #00ff99;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #c5cbd8;
+            line-height: 1.6;
+        }
+
+        .tips {
+            background: #101629;
+            border-radius: 12px;
+            padding: 25px;
+            line-height: 2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #151c30;
+            color: #aab3c5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎮 PAPI GAMING</h1>
+        <p>Your World of Gaming</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#tips">Gaming Tips</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <h2>LEVEL UP YOUR GAME!</h2>
+        <p>
+            Welcome to Papi Gaming.<br>
+            Discover gaming tips, strategies and more.
+        </p>
+        <a href="#games" class="button">EXPLORE GAMES</a>
+    </div>
+
+    <section id="games">
+        <h2>🔥 POPULAR GAMES</h2>
+
+        <div class="games">
+            <div class="card">
+                <h3>🎯 Call of Duty Mobile</h3>
+                <p>
+                    Explore multiplayer strategies, Battle Royale
+                    tips, weapon loadouts and sniper techniques.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚔️ Warzone</h3>
+                <p>
+                    Discover movement techniques, weapon setups
+                    and ways to improve your gameplay.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚽ eFootball</h3>
+                <p>
+                    Learn football tactics, formations and
+                    techniques to improve your matches.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🕹️ Console Gaming</h3>
+                <p>
+                    Explore controller settings, gaming guides
+                    and tips for console players.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips">
+        <h2>💡 GAMING TIPS</h2>
+
+        <div class="tips">
+            <p>🎯 Practise your aim consistently.</p>
+            <p>⚡ Adjust sensitivity to suit your playstyle.</p>
+            <p>🎮 Learn maps and understand positioning.</p>
+            <p>🔥 Experiment with different weapon loadouts.</p>
+            <p>🏆 Play strategically and communicate with teammates.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>👾 ABOUT PAPI GAMING</h2>
+        <p style="text-align:center; line-height:1.8; color:#c5cbd8;">
+            Papi Gaming is a gaming website built for gamers
+            who want to explore games, learn new strategies
+            and improve their gaming skills.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Papi Gaming | Built with HTML and CSS</p>
+    </footer>
+
+</body>
+</html>
