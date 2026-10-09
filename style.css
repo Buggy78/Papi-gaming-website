@@ -700,3 +700,32 @@ section h2 {
     padding-top: 18px;
   }
 }
+
+/* Predictable two-row mobile navigation */
+@media (max-width: 600px) {
+  .main-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 10px 4px;
+    padding: 12px 6px;
+  }
+
+  .main-nav a {
+    font-size: clamp(0.68rem, 2.7vw, 0.82rem);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .main-nav a[href="#links"] {
+    grid-column: 1 / span 2;
+  }
+
+  .main-nav #addUserBtn {
+    grid-column: 3 / span 2;
+    justify-self: center;
+    min-height: 38px;
+    padding: 8px 12px;
+  }
+}
