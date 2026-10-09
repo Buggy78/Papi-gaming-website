@@ -680,3 +680,23 @@ section h2 {
     padding-top: 12px;
   }
 }
+@media (max-width: 600px) {
+  .main-nav {
+    gap: 8px 12px;
+    padding: 10px 8px;
+    margin: 8px;
+  }
+
+  .main-nav a {
+    font-size: 0.78rem;
+  }
+
+  .main-nav #addUserBtn {
+    min-height: 36px;
+    padding: 7px 10px;
+  }
+
+  .hero-content {
+    padding-top: 18px;
+  }
+}
