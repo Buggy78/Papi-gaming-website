@@ -729,3 +729,14 @@ section h2 {
     padding: 8px 12px;
   }
 }
+
+/* Reduce excess space above the hero panel on mobile */
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 0;
+  }
+
+  .hero-content {
+    padding-top: 16px;
+  }
+}
