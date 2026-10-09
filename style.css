@@ -740,3 +740,93 @@ section h2 {
     padding-top: 16px;
   }
 }
+
+/* CODM sensitivity calculator — mobile UI */
+#codm .tool-card {
+  width: 100%;
+  max-width: 720px;
+  margin: 18px auto;
+  padding: 22px 18px;
+  background: linear-gradient(145deg, #101b14, #070b08);
+  border: 1px solid #00ff88;
+  border-radius: 18px;
+  box-shadow: 0 0 22px rgba(0, 255, 136, 0.08);
+}
+
+#codm .tool-card > p:first-child {
+  color: #d9e9df;
+  line-height: 1.65;
+}
+
+#codm label {
+  display: block;
+  margin: 20px 0 8px;
+  color: #00ff88;
+  font-weight: 800;
+}
+
+#codm select {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px;
+  color: #f4fff8;
+  background: #0a110d;
+  border: 1px solid #367d54;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#codm select:focus-visible {
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}
+
+#codm #calculateBtn {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 24px;
+  background: #00ff88;
+  color: #04140b;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+#codm #sensitivityResult {
+  margin-top: 20px;
+  padding: 18px;
+  color: #effff4;
+  background: #060a07;
+  border: 1px solid #24553a;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+#codm #sensitivityResult h3 {
+  color: #00ff88;
+  margin-top: 0;
+}
+
+#codm #sensitivityResult ul {
+  padding-left: 22px;
+  line-height: 1.9;
+}
+
+#codm .note {
+  color: #b8cabe;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  #codm .tool-card {
+    padding: 18px 14px;
+  }
+
+  #codm label {
+    margin-top: 17px;
+  }
+}
