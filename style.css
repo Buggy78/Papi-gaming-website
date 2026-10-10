@@ -1529,3 +1529,50 @@ button,
   }
 }
 
+
+/* CODM cosmetics image cards */
+.cosmetic-card {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  transition: transform .25s ease, border-color .25s ease,
+              box-shadow .25s ease;
+}
+
+.cosmetic-card-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: #101713;
+  transition: transform .35s ease;
+}
+
+.cosmetic-card:hover {
+  transform: translateY(-5px);
+  border-color: #00ff88;
+  box-shadow: 0 0 18px rgba(0, 255, 136, .18);
+}
+
+.cosmetic-card:hover .cosmetic-card-image {
+  transform: scale(1.04);
+}
+
+.cosmetic-card h3 {
+  color: #00ff88;
+}
+
+@media (max-width: 600px) {
+  .cosmetic-card-image {
+    height: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmetic-card,
+  .cosmetic-card-image {
+    transition: none;
+  }
+}
