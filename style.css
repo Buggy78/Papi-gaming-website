@@ -1162,3 +1162,39 @@ img {
     flex: 1 1 130px;
   }
 }
+
+/* Final mobile navigation override */
+nav.main-nav {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 16px !important;
+}
+
+nav.main-nav a,
+nav.main-nav button {
+  display: flex !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 12px 6px !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+
+@media (min-width: 700px) {
+  nav.main-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
