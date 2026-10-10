@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0a">
+  <meta name="description" content="Sign in or create your Gilly Gaming Zone account.">
+  <title>Login Portal | Gilly Gaming Zone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-wrap {
+      width: min(100% - 28px, 480px);
+      margin: 45px auto;
+    }
+    .login-card {
+      background: #101713;
+      border: 1px solid #20372b;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 36px #0008;
+    }
+    .login-card h1, .login-card h2 { color: #00ff88; }
+    .login-card label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    .login-card input {
+      display: block;
+      width: 100%;
+    }
+    .login-card .button {
+      margin: 14px 8px 0 0;
+      padding: 11px 16px;
+      border: 1px solid #00ff88;
+      background: #10251a;
+      color: #00ff88;
+    }
+    #userMessage { overflow-wrap: anywhere; }
+    .back-link { color: #00ff88; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Gilly Gaming Zone</h1>
+    <p>Your gaming account portal</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tools.html">Gaming Tools</a>
+    <a href="cosmetics.html">Cosmetics Gallery</a>
+  </nav>
+
+  <main class="login-wrap">
+    <section class="login-card">
+      <h2>🎮 Player Account</h2>
+      <button class="button" id="addUserBtn" type="button">Account</button>
+      <p>Sign in or create your gaming account.</p>
+
+      <div id="userPanel">
+        <div id="authForms">
+          <label for="usernameInput">Gaming username</label>
+          <input id="usernameInput" type="text" maxlength="24"
+            placeholder="Choose a gaming name" autocomplete="nickname">
+
+          <label for="emailInput">Email address</label>
+          <input id="emailInput" type="email"
+            placeholder="Enter your email" autocomplete="email" required>
+
+          <label for="passwordInput">Password</label>
+          <input id="passwordInput" type="password"
+            placeholder="At least 6 characters"
+            autocomplete="current-password" minlength="6" required>
+
+          <button class="button" id="signupBtn" type="button">
+            Create Account
+          </button>
+          <button class="button" id="loginBtn" type="button">
+            Log In
+          </button>
+        </div>
+
+        <div id="signedInPanel" hidden>
+          <p>Signed in as <strong id="signedInUsername"></strong></p>
+          <button class="button" id="logoutBtn" type="button">Log Out</button>
+        </div>
+
+        <p id="userMessage" role="status" aria-live="polite"></p>
+      </div>
+
+      <p id="loadingMessage" hidden>Loading account portal…</p>
+      <p><a class="back-link" href="index.html">← Return to homepage</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Gilly Gaming Zone
+  </footer>
+
+  <script>
+    /* Display the panel only after the Firebase module is loaded. */
+    window.addEventListener("load", () => {
+      document.getElementById("loadingMessage").textContent =
+        "If the account panel does not appear, check your connection.";
+    });
+  </script>
+  <script type="module" src="firebase-auth.js"></script>
+</body>
+</html>

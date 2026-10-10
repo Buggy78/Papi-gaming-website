@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0a">
+  <meta name="description" content="Explore a searchable gallery of gaming cosmetics in Gilly Gaming Zone.">
+  <title>Cosmetics Gallery | Gilly Gaming Zone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-wrap { width: min(100% - 28px, 1100px); margin: 30px auto; }
+    .gallery-search { width: 100%; margin: 14px 0; }
+    .cosmetic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 14px; }
+    .cosmetic-card { background: #101713; border: 1px solid #20372b; border-radius: 14px; padding: 16px; text-align: left; color: #f5f7f5; }
+    .cosmetic-card[aria-pressed="true"] { border: 2px solid #00ff88; background: #12251a; }
+    .cosmetic-card h3 { color: #00ff88; margin: 8px 0; }
+    .cosmetic-icon { font-size: 36px; }
+    .cosmetic-details { margin-top: 18px; padding: 18px; border: 1px solid #00ff88; border-radius: 14px; background: #101713; }
+    .muted { color: #aab7af; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Cosmetics Gallery</h1>
+    <p>Browse and select your favourite game cosmetics</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login Portal</a>
+    <a href="tools.html">Gaming Tools</a>
+  </nav>
+
+  <main class="gallery-wrap">
+    <section>
+      <h2>Explore the Collection</h2>
+      <p class="muted">Search the sample collection and select a card to view its details.</p>
+      <label for="cosmeticSearch">Search cosmetics</label>
+      <input id="cosmeticSearch" class="gallery-search" type="search" placeholder="Search characters, outfits, emblems…">
+
+      <div id="cosmeticGrid" class="cosmetic-grid">
+        <button class="cosmetic-card" data-name="operator outfits characters" data-title="Operator Outfits" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🧥</span>
+          <h3>Operator Outfits</h3>
+          <p class="muted">Character appearance collection</p>
+        </button>
+        <button class="cosmetic-card" data-name="character skins heroes" data-title="Character Skins" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🧑‍🚀</span>
+          <h3>Character Skins</h3>
+          <p class="muted">Browse character styles</p>
+        </button>
+        <button class="cosmetic-card" data-name="emblems badges profile" data-title="Emblems and Badges" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🏅</span>
+          <h3>Emblems and Badges</h3>
+          <p class="muted">Profile decoration</p>
+        </button>
+        <button class="cosmetic-card" data-name="calling cards profile backgrounds" data-title="Calling Cards" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🪪</span>
+          <h3>Calling Cards</h3>
+          <p class="muted">Personalise your profile</p>
+        </button>
+        <button class="cosmetic-card" data-name="parachutes wingsuit battle royale" data-title="BR Cosmetics" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🪂</span>
+          <h3>BR Cosmetics</h3>
+          <p class="muted">Battle Royale appearance items</p>
+        </button>
+        <button class="cosmetic-card" data-name="vehicle skins vehicle appearance" data-title="Vehicle Cosmetics" aria-pressed="false">
+          <span class="cosmetic-icon" aria-hidden="true">🏎️</span>
+          <h3>Vehicle Cosmetics</h3>
+          <p class="muted">Vehicle appearance collection</p>
+        </button>
+      </div>
+
+      <p id="emptyMessage" class="muted" hidden>No matching cosmetics found.</p>
+
+      <div id="cosmeticDetails" class="cosmetic-details" aria-live="polite" hidden>
+        <h2 id="detailTitle"></h2>
+        <p id="detailDescription"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Gilly Gaming Zone</footer>
+
+  <script>
+    const search = document.getElementById("cosmeticSearch");
+    const cards = [...document.querySelectorAll(".cosmetic-card")];
+    const emptyMessage = document.getElementById("emptyMessage");
+    const details = document.getElementById("cosmeticDetails");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailDescription = document.getElementById("detailDescription");
+
+    search.addEventListener("input", () => {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matches = (card.dataset.name + " " + card.dataset.title).toLowerCase().includes(query);
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      emptyMessage.hidden = visible > 0;
+    });
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        cards.forEach(item => item.setAttribute("aria-pressed", "false"));
+        card.setAttribute("aria-pressed", "true");
+        detailTitle.textContent = card.dataset.title;
+        detailDescription.textContent =
+          "This is a sample gallery category. Specific item images and verified collection details can be added later.";
+        details.hidden = false;
+      });
+    });
+  </script>
+</body>
+</html>
