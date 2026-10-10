@@ -1092,3 +1092,73 @@ img {
 }
 
 /* ===== END PORTAL REDESIGN ===== */
+
+/* Mobile layout improvements */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-nav a,
+.main-nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+#userPanel,
+.login-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: clamp(16px, 4vw, 28px);
+}
+
+#userPanel h1,
+#userPanel h2,
+.login-card h1,
+.login-card h2 {
+  font-size: clamp(1.5rem, 6vw, 2.4rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+#userPanel input,
+#userPanel select,
+#userPanel textarea,
+.login-card input,
+.login-card select,
+.login-card textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .main-nav a,
+  .main-nav button {
+    flex: 1 1 130px;
+  }
+}
