@@ -872,3 +872,223 @@ section h2 {
     font-size: 1.2rem;
   }
 }
+
+/* ===== GILLY GAMING ZONE: PORTAL REDESIGN ===== */
+
+:root {
+  --gaming-bg: #080b0a;
+  --gaming-panel: #101713;
+  --gaming-green: #00ff88;
+  --gaming-border: #20372b;
+  --gaming-muted: #aab7af;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top, #10251a 0%, transparent 48%),
+    var(--gaming-bg);
+  color: #f5f7f5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.button,
+.portal-button {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.button:hover,
+.portal-button:hover {
+  transform: translateY(-2px);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gaming-green);
+  outline-offset: 3px;
+}
+
+main {
+  padding: 0 14px 40px;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #101713, #080b0a);
+  border-bottom: 2px solid var(--gaming-green);
+}
+
+nav {
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #20372b;
+}
+
+nav a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: #173124;
+}
+
+.hero {
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 80% 20%, #12482d 0%, transparent 40%),
+    linear-gradient(135deg, #111b15, #080b0a);
+  box-shadow: 0 12px 36px #0008;
+}
+
+section {
+  margin: 32px auto;
+}
+
+section > h2 {
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 16px #00ff8830;
+}
+
+.card,
+.portal-card,
+.gallery-card,
+.tool-card {
+  background: linear-gradient(145deg, #131b16, #0b100d);
+  border: 1px solid var(--gaming-border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 24px #0004;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.portal-card:hover,
+.gallery-card:hover,
+.tool-card:hover {
+  border-color: var(--gaming-green);
+  transform: translateY(-3px);
+}
+
+.portal-grid,
+.gallery-grid,
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.portal-card h3,
+.gallery-card h3,
+.tool-card h3 {
+  color: var(--gaming-green);
+  margin-top: 0;
+}
+
+.portal-card p,
+.gallery-card p,
+.tool-card p {
+  color: var(--gaming-muted);
+}
+
+.portal-button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--gaming-green);
+  border-radius: 10px;
+  color: var(--gaming-green);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  background: #0c120e;
+  color: #f5f7f5;
+  border: 1px solid #31513e;
+  border-radius: 9px;
+  padding: 11px 12px;
+}
+
+button {
+  border-radius: 9px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.gallery-search {
+  width: 100%;
+  margin: 12px 0 20px;
+}
+
+.gallery-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.site-footer {
+  padding: 24px 14px;
+  color: var(--gaming-muted);
+  text-align: center;
+  border-top: 1px solid var(--gaming-border);
+}
+
+@media (max-width: 600px) {
+  nav {
+    gap: 8px;
+    padding: 10px 6px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  main {
+    padding: 0 12px 28px;
+  }
+
+  .portal-grid,
+  .gallery-grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .portal-card,
+  .gallery-card,
+  .tool-card {
+    padding: 14px;
+  }
+
+  .hero {
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ===== END PORTAL REDESIGN ===== */
